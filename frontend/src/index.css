@@ -113,15 +113,15 @@
   }
   
   .badge-success {
-    @apply badge bg-success-50 text-success-700 border border-success-200;
+    @apply badge bg-profit-50 text-profit-700 border border-profit-200;
   }
   
   .badge-warning {
-    @apply badge bg-warning-50 text-warning-700 border border-warning-200;
+    @apply badge bg-warning-50 text-warning-500 border border-warning-200;
   }
   
   .badge-danger {
-    @apply badge bg-danger-50 text-danger-700 border border-danger-200;
+    @apply badge bg-loss-50 text-loss-700 border border-loss-200;
   }
 }
 
@@ -131,11 +131,11 @@
   }
   
   .text-gradient-success {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-success-600 to-success-800;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-profit-600 to-profit-800;
   }
   
   .text-gradient-danger {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-danger-600 to-danger-800;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-loss-600 to-loss-800;
   }
   
   .hover-lift {
