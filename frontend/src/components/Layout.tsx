@@ -29,15 +29,15 @@ const navigation = [
 
 export default function Layout({ children }: LayoutProps) {
   const location = useLocation()
-  const { isDark, toggle } = useDarkMode()
-
-export default function Layout({ children }: LayoutProps) {
-  const location = useLocation()
 
   return (
     <div className="min-h-screen">
       {/* Premium Header with refined glassmorphism */}
       <header className="bg-white/95 backdrop-blur-2xl border-b border-secondary-200/60 sticky top-0 z-50 transition-all duration-300">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex items-center justify-between h-20">
+            <motion.div 
+              className="flex items-center space-x-4"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
