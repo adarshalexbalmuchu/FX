@@ -11,7 +11,11 @@ import {
   FileText,
   Activity,
   Sparkles,
+  Moon,
+  Sun,
 } from 'lucide-react'
+import { useDarkMode } from '../hooks/useDarkMode'
+import { Button } from './ui/button'
 
 interface LayoutProps {
   children: ReactNode;
@@ -29,6 +33,7 @@ const navigation = [
 
 export default function Layout({ children }: LayoutProps) {
   const location = useLocation()
+  const { isDark, toggle } = useDarkMode()
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-secondary-50 via-primary-50/30 to-secondary-50">
@@ -60,9 +65,26 @@ export default function Layout({ children }: LayoutProps) {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary-50 to-primary-100/50 border border-primary-200">
-                <div className="w-2 h-2 bg-success-500 rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium text-secondary-700">System Online</span>
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary-50 to-primary-100/50 border border-primary-200">
+                  <div className="w-2 h-2 bg-success-500 rounded-full animate-pulse"></div>
+                  <span className="text-sm font-medium text-secondary-700">System Online</span>
+                </div>
+                
+                {/* Dark mode toggle */}
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={toggle}
+                  className="rounded-full hover:bg-primary-50"
+                  aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+                >
+                  {isDark ? (
+                    <Sun className="w-5 h-5 text-amber-500" />
+                  ) : (
+                    <Moon className="w-5 h-5 text-primary-600" />
+                  )}
+                </Button>
               </div>
             </motion.div>
           </div>
