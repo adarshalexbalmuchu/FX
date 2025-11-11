@@ -170,7 +170,9 @@ export default function Sensitivities() {
                 [1, '#14B8A6']       // Teal (high NPM)
               ],
               colorbar: {
-                title: 'NPM',
+                title: {
+                  text: 'NPM'
+                },
                 tickformat: '.1%',
                 thickness: 20,
                 len: 0.7
