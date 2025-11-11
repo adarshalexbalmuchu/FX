@@ -3,7 +3,11 @@ services:
     name: volatisense-api
     runtime: python
     plan: free
-    buildCommand: pip install --upgrade pip && pip install -r backend/requirements.txt
+    region: oregon
+    buildCommand: |
+      python --version
+      pip install --upgrade pip setuptools wheel
+      pip install -r backend/requirements.txt
     startCommand: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PYTHON_VERSION
@@ -13,4 +17,5 @@ services:
       - key: CORS_ORIGINS
         value: https://adarshalexbalmuchu.github.io
       - key: PYTHONUNBUFFERED
-        value: 1
+        value: "1"
+    autoDeploy: true
