@@ -1,0 +1,9 @@
+{
+  "firm": "Infosys Limited",
+  "revenue_inr_q": 8500.0,
+  "cost_inr_q": 6800.0,
+  "assets_inr": 45000.0,
+  "export_share_theta": 0.68,
+  "foreign_cost_share_kappa": 0.18,
+  "pass_through_psi": 0.32
+}
