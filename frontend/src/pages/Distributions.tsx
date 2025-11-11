@@ -4,26 +4,6 @@ import Plot from 'react-plotly.js';
 import { BarChart3, AlertCircle } from 'lucide-react';
 import LoadingSpinner from '../components/LoadingSpinner';
 
-interface DistributionData {
-  npm_values: number[];
-  roa_values: number[];
-  percentiles: {
-    p01: number;
-    p05: number;
-    p10: number;
-    p25: number;
-    p50: number;
-    p75: number;
-    p90: number;
-    p95: number;
-    p99: number;
-  };
-  mean: number;
-  std: number;
-  skewness: number;
-  kurtosis: number;
-}
-
 export default function Distributions() {
   const [loading, setLoading] = useState(false);
   const [npmData, setNpmData] = useState<number[]>([]);
@@ -54,7 +34,6 @@ export default function Distributions() {
 
   const currentData = selectedMetric === 'npm' ? npmData : roaData;
   const metricLabel = selectedMetric === 'npm' ? 'Net Profit Margin' : 'Return on Assets';
-  const metricFormat = selectedMetric === 'npm' ? '.2%' : '.2%';
 
   if (loading) {
     return <LoadingSpinner message="Loading distributions..." />;
@@ -142,8 +121,7 @@ export default function Distributions() {
           data={[
             {
               x: currentData,
-              type: 'histogram',
-              nbinsx: 50,
+              type: 'histogram' as const,
               marker: {
                 color: '#14B8A6',
                 line: {
