@@ -33,7 +33,7 @@ export default function Dashboard() {
     <div className="space-y-10">
       {/* Premium Page Header with gradient */}
       <motion.div 
-        className="glass-card p-10 border-l-4 border-l-primary-600 dark:border-l-primary-500 shadow-card"
+        className="glass-card p-10 border-l-4 border-l-primary-600 shadow-card"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
@@ -42,17 +42,17 @@ export default function Dashboard() {
           <div className="space-y-3">
             <div className="flex items-center gap-4">
               <motion.div
-                className="p-3 bg-gradient-to-br from-primary-100 to-primary-50 dark:from-primary-950/40 dark:to-primary-900/20 rounded-xl shadow-sm"
+                className="p-3 bg-gradient-to-br from-primary-100 to-primary-50 rounded-xl shadow-sm"
                 whileHover={{ rotate: 5, scale: 1.1 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 12 }}
               >
-                <Zap className="w-8 h-8 text-primary-600 dark:text-primary-400" strokeWidth={2.5} />
+                <Zap className="w-8 h-8 text-primary-600" strokeWidth={2.5} />
               </motion.div>
-              <h1 className="text-5xl font-bold bg-gradient-to-r from-secondary-900 via-primary-700 to-primary-600 dark:from-secondary-100 dark:via-primary-400 dark:to-primary-500 bg-clip-text text-transparent leading-tight">
+              <h1 className="text-5xl font-bold bg-gradient-to-r from-secondary-900 via-primary-700 to-primary-600 bg-clip-text text-transparent leading-tight">
                 Dashboard
               </h1>
             </div>
-            <p className="text-secondary-600 dark:text-secondary-400 text-lg leading-relaxed max-w-2xl">
+            <p className="text-secondary-600 text-lg leading-relaxed max-w-2xl">
               Real-time overview of profitability and risk metrics from FX simulations
             </p>
           </div>
@@ -151,45 +151,45 @@ export default function Dashboard() {
         <h2 className="subsection-heading mb-8">Simulation Summary</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div className="space-y-6">
-            <h3 className="text-sm font-semibold text-secondary-600 dark:text-secondary-400 uppercase tracking-wider">Configuration</h3>
+            <h3 className="text-sm font-semibold text-secondary-600 uppercase tracking-wider">Configuration</h3>
             <dl className="space-y-4">
-              <div className="flex justify-between items-center py-2 border-b border-secondary-200/50 dark:border-white/10">
-                <dt className="text-secondary-600 dark:text-secondary-400 font-medium">Model</dt>
-                <dd className="font-bold text-secondary-900 dark:text-secondary-100 tabular-nums">GBM</dd>
+              <div className="flex justify-between items-center py-2 border-b border-secondary-200/50">
+                <dt className="text-secondary-600 font-medium">Model</dt>
+                <dd className="font-bold text-secondary-900 tabular-nums">GBM</dd>
               </div>
-              <div className="flex justify-between items-center py-2 border-b border-secondary-200/50 dark:border-white/10">
-                <dt className="text-secondary-600 dark:text-secondary-400 font-medium">Paths Simulated</dt>
-                <dd className="font-bold text-secondary-900 dark:text-secondary-100 tabular-nums">10,000</dd>
+              <div className="flex justify-between items-center py-2 border-b border-secondary-200/50">
+                <dt className="text-secondary-600 font-medium">Paths Simulated</dt>
+                <dd className="font-bold text-secondary-900 tabular-nums">10,000</dd>
               </div>
-              <div className="flex justify-between items-center py-2 border-b border-secondary-200/50 dark:border-white/10">
-                <dt className="text-secondary-600 dark:text-secondary-400 font-medium">Horizon</dt>
-                <dd className="font-bold text-secondary-900 dark:text-secondary-100 tabular-nums">4 quarters</dd>
+              <div className="flex justify-between items-center py-2 border-b border-secondary-200/50">
+                <dt className="text-secondary-600 font-medium">Horizon</dt>
+                <dd className="font-bold text-secondary-900 tabular-nums">4 quarters</dd>
               </div>
-              <div className="flex justify-between items-center py-2 border-b border-secondary-200/50 dark:border-white/10">
-                <dt className="text-secondary-600 dark:text-secondary-400 font-medium">Volatility (σ)</dt>
-                <dd className="font-bold text-secondary-900 dark:text-secondary-100 tabular-nums">8.2%</dd>
+              <div className="flex justify-between items-center py-2 border-b border-secondary-200/50">
+                <dt className="text-secondary-600 font-medium">Volatility (σ)</dt>
+                <dd className="font-bold text-secondary-900 tabular-nums">8.2%</dd>
               </div>
             </dl>
           </div>
           
           <div className="space-y-6">
-            <h3 className="text-sm font-semibold text-secondary-600 dark:text-secondary-400 uppercase tracking-wider">Hedge Strategy</h3>
+            <h3 className="text-sm font-semibold text-secondary-600 uppercase tracking-wider">Hedge Strategy</h3>
             <dl className="space-y-4">
-              <div className="flex justify-between items-center py-2 border-b border-secondary-200/50 dark:border-white/10">
-                <dt className="text-secondary-600 dark:text-secondary-400 font-medium">Forward Contracts</dt>
-                <dd className="font-bold text-secondary-900 dark:text-secondary-100 tabular-nums">55%</dd>
+              <div className="flex justify-between items-center py-2 border-b border-secondary-200/50">
+                <dt className="text-secondary-600 font-medium">Forward Contracts</dt>
+                <dd className="font-bold text-secondary-900 tabular-nums">55%</dd>
               </div>
-              <div className="flex justify-between items-center py-2 border-b border-secondary-200/50 dark:border-white/10">
-                <dt className="text-secondary-600 dark:text-secondary-400 font-medium">Currency Options</dt>
-                <dd className="font-bold text-secondary-900 dark:text-secondary-100 tabular-nums">30%</dd>
+              <div className="flex justify-between items-center py-2 border-b border-secondary-200/50">
+                <dt className="text-secondary-600 font-medium">Currency Options</dt>
+                <dd className="font-bold text-secondary-900 tabular-nums">30%</dd>
               </div>
-              <div className="flex justify-between items-center py-2 border-b border-secondary-200/50 dark:border-white/10">
-                <dt className="text-secondary-600 dark:text-secondary-400 font-medium">Natural Hedge</dt>
-                <dd className="font-bold text-secondary-900 dark:text-secondary-100 tabular-nums">15%</dd>
+              <div className="flex justify-between items-center py-2 border-b border-secondary-200/50">
+                <dt className="text-secondary-600 font-medium">Natural Hedge</dt>
+                <dd className="font-bold text-secondary-900 tabular-nums">15%</dd>
               </div>
               <div className="flex justify-between items-center py-2">
-                <dt className="text-secondary-600 dark:text-secondary-400 font-medium">Total Hedged</dt>
-                <dd className="font-bold text-primary-600 dark:text-primary-400 tabular-nums text-lg">100%</dd>
+                <dt className="text-secondary-600 font-medium">Total Hedged</dt>
+                <dd className="font-bold text-primary-600 tabular-nums text-lg">100%</dd>
               </div>
             </dl>
           </div>

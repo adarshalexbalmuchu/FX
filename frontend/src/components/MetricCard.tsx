@@ -60,45 +60,45 @@ const sizeStyles = {
 
 const categoryStyles: Record<MetricCategory, { color: string; bg: string; border: string; hoverBorder: string; glow: string }> = {
   npm: {
-    color: 'text-blue-600 dark:text-blue-400',
-    bg: 'from-blue-100 to-blue-50 dark:from-blue-950/40 dark:to-blue-900/20',
-    border: 'border-blue-200 dark:border-blue-800',
-    hoverBorder: 'hover:border-l-blue-500 dark:hover:border-l-blue-400',
+    color: 'text-blue-600',
+    bg: 'from-blue-100 to-blue-50',
+    border: 'border-blue-200',
+    hoverBorder: 'hover:border-l-blue-500',
     glow: 'shadow-blue-500/20',
   },
   roa: {
-    color: 'text-purple-600 dark:text-purple-400',
-    bg: 'from-purple-100 to-purple-50 dark:from-purple-950/40 dark:to-purple-900/20',
-    border: 'border-purple-200 dark:border-purple-800',
-    hoverBorder: 'hover:border-l-purple-500 dark:hover:border-l-purple-400',
+    color: 'text-purple-600',
+    bg: 'from-purple-100 to-purple-50',
+    border: 'border-purple-200',
+    hoverBorder: 'hover:border-l-purple-500',
     glow: 'shadow-purple-500/20',
   },
   var: {
-    color: 'text-amber-600 dark:text-amber-400',
-    bg: 'from-amber-100 to-amber-50 dark:from-amber-950/40 dark:to-amber-900/20',
-    border: 'border-amber-200 dark:border-amber-800',
-    hoverBorder: 'hover:border-l-amber-500 dark:hover:border-l-amber-400',
+    color: 'text-amber-600',
+    bg: 'from-amber-100 to-amber-50',
+    border: 'border-amber-200',
+    hoverBorder: 'hover:border-l-amber-500',
     glow: 'shadow-amber-500/20',
   },
   cvar: {
-    color: 'text-red-600 dark:text-red-400',
-    bg: 'from-red-100 to-red-50 dark:from-red-950/40 dark:to-red-900/20',
-    border: 'border-red-200 dark:border-red-800',
-    hoverBorder: 'hover:border-l-red-500 dark:hover:border-l-red-400',
+    color: 'text-red-600',
+    bg: 'from-red-100 to-red-50',
+    border: 'border-red-200',
+    hoverBorder: 'hover:border-l-red-500',
     glow: 'shadow-red-500/20',
   },
   hedge: {
-    color: 'text-green-600 dark:text-green-400',
-    bg: 'from-green-100 to-green-50 dark:from-green-950/40 dark:to-green-900/20',
-    border: 'border-green-200 dark:border-green-800',
-    hoverBorder: 'hover:border-l-green-500 dark:hover:border-l-green-400',
+    color: 'text-green-600',
+    bg: 'from-green-100 to-green-50',
+    border: 'border-green-200',
+    hoverBorder: 'hover:border-l-green-500',
     glow: 'shadow-green-500/20',
   },
   neutral: {
-    color: 'text-primary-600 dark:text-primary-400',
-    bg: 'from-primary-100 to-primary-50 dark:from-primary-950/40 dark:to-primary-900/20',
-    border: 'border-primary-200 dark:border-primary-800',
-    hoverBorder: 'hover:border-l-primary-500 dark:hover:border-l-primary-400',
+    color: 'text-primary-600',
+    bg: 'from-primary-100 to-primary-50',
+    border: 'border-primary-200',
+    hoverBorder: 'hover:border-l-primary-500',
     glow: 'shadow-primary-500/20',
   },
 }
@@ -197,8 +197,8 @@ export default function MetricCard({
 
         {/* Title with refined typography */}
         <h3 className={cn(
-          'font-semibold text-secondary-600 dark:text-secondary-400',
-          'group-hover:text-secondary-900 dark:group-hover:text-secondary-200',
+          'font-semibold text-secondary-600',
+          'group-hover:text-secondary-900',
           'transition-colors duration-300 mb-3 uppercase tracking-wider',
           styles.title
         )}>
@@ -211,7 +211,6 @@ export default function MetricCard({
             className={cn(
               'font-bold font-mono-num',
               'bg-gradient-to-r from-secondary-900 via-primary-700 to-secondary-900',
-              'dark:from-secondary-100 dark:via-primary-400 dark:to-secondary-100',
               'bg-clip-text text-transparent',
               'leading-none',
               styles.value
@@ -228,7 +227,7 @@ export default function MetricCard({
             {value}
             {suffix && (
               <span className={cn(
-                'text-secondary-500 dark:text-secondary-400 ml-2 font-medium',
+                'text-secondary-500 ml-2 font-medium',
                 styles.suffix
               )}>
                 {suffix}
@@ -258,7 +257,7 @@ export default function MetricCard({
               }}
             >
               <span className="num tabular-nums">{change > 0 ? '+' : ''}{change.toFixed(1)}%</span>
-              <span className="text-secondary-400 dark:text-secondary-500" aria-hidden="true">•</span>
+              <span className="text-secondary-400" aria-hidden="true">•</span>
               <span className="font-medium">vs baseline</span>
             </motion.div>
           )}
@@ -266,7 +265,7 @@ export default function MetricCard({
           {/* Sparkline slot with smooth reveal */}
           {sparkline && (
             <motion.div
-              className="mt-4 pt-3 border-t border-secondary-200/50 dark:border-white/10"
+              className="mt-4 pt-3 border-t border-secondary-200/50"
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               transition={{ 
@@ -282,7 +281,7 @@ export default function MetricCard({
           {/* Description with refined typography */}
           {description && (
             <motion.p 
-              className="text-xs text-secondary-500 dark:text-secondary-400 mt-4 leading-relaxed"
+              className="text-xs text-secondary-500 mt-4 leading-relaxed"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: delay + 0.5 }}

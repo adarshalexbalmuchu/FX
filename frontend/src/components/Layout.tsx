@@ -11,11 +11,7 @@ import {
   FileText,
   Activity,
   Sparkles,
-  Moon,
-  Sun,
 } from 'lucide-react'
-import { useDarkMode } from '../hooks/useDarkMode'
-import { Button } from './ui/button'
 
 interface LayoutProps {
   children: ReactNode;
@@ -35,28 +31,27 @@ export default function Layout({ children }: LayoutProps) {
   const location = useLocation()
   const { isDark, toggle } = useDarkMode()
 
+export default function Layout({ children }: LayoutProps) {
+  const location = useLocation()
+
   return (
-    <div className="min-h-screen transition-colors duration-300">
+    <div className="min-h-screen">
       {/* Premium Header with refined glassmorphism */}
-      <header className="bg-white/95 dark:bg-card/95 backdrop-blur-2xl border-b border-secondary-200/60 dark:border-white/10 sticky top-0 z-50 transition-all duration-300">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            <motion.div 
-              className="flex items-center space-x-4"
+      <header className="bg-white/95 backdrop-blur-2xl border-b border-secondary-200/60 sticky top-0 z-50 transition-all duration-300">
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
             >
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-primary-600 rounded-xl opacity-0 group-hover:opacity-100 blur-lg transition-opacity duration-300"></div>
-                <Activity className="w-11 h-11 text-primary-600 dark:text-primary-400 relative z-10 transition-transform duration-300 group-hover:scale-110" strokeWidth={2.5} />
-                <Sparkles className="w-4 h-4 text-primary-400 dark:text-primary-300 absolute -top-1 -right-1 animate-pulse z-10" />
+                <Activity className="w-11 h-11 text-primary-600 relative z-10 transition-transform duration-300 group-hover:scale-110" strokeWidth={2.5} />
+                <Sparkles className="w-4 h-4 text-primary-400 absolute -top-1 -right-1 animate-pulse z-10" />
               </div>
               <div>
-                <h1 className="text-3xl font-bold bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 dark:from-primary-400 dark:via-primary-300 dark:to-primary-400 bg-clip-text text-transparent">
+                <h1 className="text-3xl font-bold bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 bg-clip-text text-transparent">
                   VolatiSense
                 </h1>
-                <p className="text-xs text-secondary-500 dark:text-secondary-400 font-semibold tracking-wide uppercase">
+                <p className="text-xs text-secondary-500 font-semibold tracking-wide uppercase">
                   FX Risk Analytics
                 </p>
               </div>
@@ -70,25 +65,10 @@ export default function Layout({ children }: LayoutProps) {
             >
               <div className="flex items-center gap-4">
                 {/* System Status Badge */}
-                <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-gradient-to-r from-primary-50 to-primary-100/50 dark:from-primary-950/50 dark:to-primary-900/30 border border-primary-200 dark:border-primary-800 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-gradient-to-r from-primary-50 to-primary-100/50 border border-primary-200 shadow-sm hover:shadow-md transition-shadow duration-300">
                   <div className="w-2 h-2 bg-profit-500 rounded-full animate-pulse shadow-glow-sm"></div>
-                  <span className="text-sm font-semibold text-secondary-700 dark:text-secondary-300">Live</span>
+                  <span className="text-sm font-semibold text-secondary-700">Live</span>
                 </div>
-                
-                {/* Premium Dark Mode Toggle */}
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={toggle}
-                  className="rounded-full hover:bg-primary-50 dark:hover:bg-primary-950/50 hover:scale-110 transition-all duration-300 shadow-sm hover:shadow-md"
-                  aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
-                >
-                  {isDark ? (
-                    <Sun className="w-5 h-5 text-amber-500" />
-                  ) : (
-                    <Moon className="w-5 h-5 text-primary-600" />
-                  )}
-                </Button>
               </div>
             </motion.div>
           </div>
@@ -96,7 +76,7 @@ export default function Layout({ children }: LayoutProps) {
       </header>
 
       {/* Premium Navigation with refined depth */}
-      <nav className="bg-white/90 dark:bg-card/90 backdrop-blur-2xl border-b border-secondary-200/60 dark:border-white/10 sticky top-20 z-40 transition-all duration-300">
+      <nav className="bg-white/90 backdrop-blur-2xl border-b border-secondary-200/60 sticky top-20 z-40 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex space-x-2 overflow-x-auto py-4 scrollbar-thin scrollbar-thumb-primary-300 scrollbar-track-transparent">
             {navigation.map((item, index) => {
@@ -116,7 +96,7 @@ export default function Layout({ children }: LayoutProps) {
                       ${
                         isActive
                           ? 'text-white bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 shadow-lg shadow-primary-500/25 scale-105'
-                          : 'text-secondary-600 dark:text-secondary-300 hover:text-primary-700 dark:hover:text-primary-400 hover:bg-primary-50/80 dark:hover:bg-primary-950/30 hover:shadow-md'
+                          : 'text-secondary-600 hover:text-primary-700 hover:bg-primary-50/80 hover:shadow-md'
                       }
                     `}
                     initial={{ opacity: 0, y: -10 }}
@@ -160,24 +140,24 @@ export default function Layout({ children }: LayoutProps) {
       </main>
 
       {/* Premium Footer with refined styling */}
-      <footer className="bg-white/90 dark:bg-card/90 backdrop-blur-2xl border-t border-secondary-200/60 dark:border-white/10 mt-20 transition-all duration-300">
+      <footer className="bg-white/90 backdrop-blur-2xl border-t border-secondary-200/60 mt-20 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-3">
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-primary-600 rounded-lg opacity-0 group-hover:opacity-100 blur transition-opacity duration-300"></div>
-                <Activity className="w-6 h-6 text-primary-600 dark:text-primary-400 relative z-10" strokeWidth={2.5} />
+                <Activity className="w-6 h-6 text-primary-600 relative z-10" strokeWidth={2.5} />
               </div>
               <div>
-                <p className="text-sm font-bold text-secondary-700 dark:text-secondary-300">
+                <p className="text-sm font-bold text-secondary-700">
                   © 2025 VolatiSense v2.1
                 </p>
-                <p className="text-xs text-secondary-500 dark:text-secondary-400">
+                <p className="text-xs text-secondary-500">
                   Premium Edition
                 </p>
               </div>
             </div>
-            <p className="text-sm text-secondary-600 dark:text-secondary-400 text-center md:text-right max-w-md">
+            <p className="text-sm text-secondary-600 text-center md:text-right max-w-md">
               Advanced FX Volatility & Hedging Optimization Platform
               <span className="block mt-1 text-xs text-secondary-500">
                 Built with precision for financial professionals
