@@ -8,7 +8,8 @@ import {
   Shield, 
   AlertTriangle,
   BarChart3,
-  Activity
+  Activity,
+  Zap
 } from 'lucide-react'
 
 export default function Dashboard() {
@@ -30,13 +31,34 @@ export default function Dashboard() {
 
   return (
     <div className="space-y-8">
-      {/* Page Header */}
-      <div>
-        <h1 className="section-heading">Dashboard</h1>
-        <p className="text-secondary-600">
-          Overview of key profitability and risk metrics from FX simulation
-        </p>
-      </div>
+      {/* Enhanced Page Header */}
+      <motion.div 
+        className="glass-card p-8 border-l-4 border-l-primary-600"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="flex items-start justify-between">
+          <div className="space-y-2">
+            <div className="flex items-center gap-3">
+              <Zap className="w-8 h-8 text-primary-600" />
+              <h1 className="text-4xl font-bold bg-gradient-to-r from-secondary-900 via-primary-700 to-primary-600 bg-clip-text text-transparent">
+                Dashboard
+              </h1>
+            </div>
+            <p className="text-secondary-600 text-lg">
+              Real-time overview of profitability and risk metrics from FX simulations
+            </p>
+          </div>
+          <motion.div
+            className="badge-success px-4 py-2 text-sm font-bold"
+            animate={{ scale: [1, 1.05, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            Live Data
+          </motion.div>
+        </div>
+      </motion.div>
 
       {/* KPI Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
