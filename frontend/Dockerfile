@@ -11,6 +11,10 @@ RUN npm ci --silent
 
 # Copy source code
 COPY . .
+# Allow optionally setting GITHUB_PAGES at build time so vite's `base` can be set
+# Example: `docker build --build-arg GITHUB_PAGES=true -t volatisense-frontend .`
+ARG GITHUB_PAGES=false
+ENV GITHUB_PAGES=${GITHUB_PAGES}
 
 # Build the application
 RUN npm run build
