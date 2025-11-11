@@ -10,7 +10,16 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      // Polyfill Node.js modules for browser
+      buffer: 'buffer/',
+      stream: 'stream-browserify',
+      util: 'util/',
     },
+  },
+  define: {
+    // Polyfill global and process for browser
+    global: 'globalThis',
+    'process.env': {},
   },
   server: {
     port: 3000,
@@ -35,6 +44,12 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ['plotly.js', 'react-plotly.js'],
+    include: ['plotly.js', 'react-plotly.js', 'buffer', 'process'],
+    esbuildOptions: {
+      // Node.js global to browser globalThis
+      define: {
+        global: 'globalThis'
+      },
+    },
   },
 })
