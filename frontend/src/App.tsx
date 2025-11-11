@@ -1,5 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Layout from './components/Layout'
 import Dashboard from './pages/Dashboard'
 import Distributions from './pages/Distributions'
@@ -13,17 +12,15 @@ function App() {
   return (
     <Router>
       <Layout>
-        <AnimatePresence mode="wait">
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/distributions" element={<Distributions />} />
-            <Route path="/sensitivities" element={<Sensitivities />} />
-            <Route path="/attribution" element={<Attribution />} />
-            <Route path="/optimizer" element={<Optimizer />} />
-            <Route path="/backtest" element={<Backtest />} />
-            <Route path="/report" element={<Report />} />
-          </Routes>
-        </AnimatePresence>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/distributions" element={<Distributions />} />
+          <Route path="/sensitivities" element={<Sensitivities />} />
+          <Route path="/attribution" element={<Attribution />} />
+          <Route path="/optimizer" element={<Optimizer />} />
+          <Route path="/backtest" element={<Backtest />} />
+          <Route path="/report" element={<Report />} />
+        </Routes>
       </Layout>
     </Router>
   )

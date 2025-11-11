@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { TrendingUp, TrendingDown, Activity, AlertCircle } from 'lucide-react'
+import { TrendingUp, TrendingDown, Activity } from 'lucide-react';
 import { ReactNode } from 'react'
 
 interface MetricCardProps {
