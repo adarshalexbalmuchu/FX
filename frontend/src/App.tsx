@@ -8,9 +8,11 @@ import Optimizer from './pages/Optimizer'
 import Backtest from './pages/Backtest'
 import Report from './pages/Report'
 
+const BASENAME = '/FX'
+
 function App() {
   return (
-    <Router>
+    <Router basename={BASENAME}>
       <Layout>
         <Routes>
           <Route path="/" element={<Dashboard />} />
