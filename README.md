@@ -12,19 +12,11 @@
 
 ---
 
-## 🚀 Deploy to GitHub Pages
+## 🚀 Live Demo
 
-**Quick Deploy:**
-```bash
-./deploy-github-pages.sh
-```
+**Frontend:** https://adarshalexbalmuchu.github.io/FX/
 
-**Full Guide:** See **[GITHUB_PAGES_DEPLOY.md](GITHUB_PAGES_DEPLOY.md)** for step-by-step instructions.
-
-**Live URLs:**
-- **Backend API:** https://volatisense-api.onrender.com
-- **API Docs:** https://volatisense-api.onrender.com/docs
-- **Frontend:** https://adarshalexbalmuchu.github.io/FX/ (after GitHub Pages deployment)
+*Deployed automatically via GitHub Actions on push to main branch*
 
 ---
 
@@ -62,22 +54,7 @@ A full-stack financial simulation platform that models how INR/USD exchange-rate
 
 ## 🚀 Quick Start
 
-### One-Command Setup
-```bash
-git clone https://github.com/yourusername/FX.git
-cd FX
-chmod +x quickstart.sh
-./quickstart.sh
-```
-
-This will:
-1. ✅ Create Python virtual environment
-2. ✅ Install backend dependencies
-3. ✅ Install frontend dependencies
-4. ✅ Run all tests
-5. ✅ Provide startup instructions
-
-### Manual Setup
+### Local Development
 
 #### Backend
 ```bash
@@ -87,8 +64,9 @@ source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 python main.py
 ```
-→ **Backend**: http://localhost:8000  
-→ **API Docs**: http://localhost:8000/docs
+
+→ Backend: <http://localhost:8000>  
+→ API Docs: <http://localhost:8000/docs>
 
 #### Frontend
 ```bash
@@ -96,7 +74,8 @@ cd frontend
 npm install
 npm run dev
 ```
-→ **Frontend**: http://localhost:3000
+
+→ Frontend: <http://localhost:3000>
 
 ---
 
@@ -264,35 +243,7 @@ pytest tests/ -v --cov=. --cov-report=html
 
 ---
 
-## 🐳 Docker Deployment
-
-### Using Docker Compose
-```bash
-docker-compose up -d
-```
-
-Services:
-- Backend: http://localhost:8000
-- Frontend: http://localhost:3000
-
-### Individual Containers
-```bash
-# Backend
-cd backend
-docker build -t volatisense-backend .
-docker run -p 8000:8000 volatisense-backend
-
-# Frontend
-cd frontend
-docker build -t volatisense-frontend .
-docker run -p 3000:80 volatisense-frontend
-```
-
-See [DEPLOYMENT.md](DEPLOYMENT.md) for cloud deployment options.
-
----
-
-## 📊 Key Metrics
+##  Key Metrics
 
 | Metric | Value |
 |--------|-------|
@@ -301,7 +252,6 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for cloud deployment options.
 | API Endpoints | 5 |
 | FX Models | 4 |
 | Frontend Pages | 7 |
-| Docker Images | 2 |
 | Dependencies | 25+ |
 
 ---
@@ -324,6 +274,15 @@ LOG_LEVEL=INFO
 VITE_API_URL=http://localhost:8000
 VITE_APP_NAME=VolatiSense
 ```
+
+---
+
+## 📚 Documentation
+
+- **Frontend Analysis**: [FRONTEND_ANALYSIS_REPORT.md](FRONTEND_ANALYSIS_REPORT.md) - Comprehensive UI/UX audit
+- **Migration Guide**: [MIGRATION_NOTES.md](MIGRATION_NOTES.md) - Developer migration notes
+- **GitHub Pages Setup**: [GITHUB_PAGES_FIX.md](GITHUB_PAGES_FIX.md) - Deployment guide
+- **Project Overview**: [PROJECT_OVERVIEW.md](PROJECT_OVERVIEW.md) - Complete technical overview
 
 ---
 
@@ -388,16 +347,19 @@ d2 = d1 - σ√T
 
 ---
 
-## 🚢 Deployment Options
+## 🚢 Deployment
 
-| Platform | Backend | Frontend | Cost |
-|----------|---------|----------|------|
-| **Render + Vercel** | Render Web Service | Vercel | Free tier available |
-| **AWS** | Elastic Beanstalk | S3 + CloudFront | ~$30/month |
-| **GCP** | Cloud Run | Firebase Hosting | ~$20/month |
-| **Docker** | Self-hosted | Self-hosted | Infrastructure only |
+Currently deployed to **GitHub Pages** with automatic deployments on push to main branch.
 
-See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions.
+**Live URL:** <https://adarshalexbalmuchu.github.io/FX/>
+
+### Deployment Workflow
+
+The site is automatically deployed using GitHub Actions (`.github/workflows/gh-pages.yml`):
+
+1. Build frontend with `npm run build`
+2. Copy `index.html` to `404.html` for SPA routing
+3. Deploy to GitHub Pages
 
 ---
 
@@ -407,7 +369,6 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions.
 - ✅ Input validation with Pydantic
 - ✅ Environment variable secrets
 - ✅ HTTPS/SSL support
-- ✅ Rate limiting (recommended)
 - ✅ Security headers
 
 ---
@@ -449,9 +410,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Documentation**: [IMPLEMENTATION_SUMMARY.md](IMPLEMENTATION_SUMMARY.md)
-- **Deployment**: [DEPLOYMENT.md](DEPLOYMENT.md)
-- **Issues**: [GitHub Issues](https://github.com/yourusername/FX/issues)
+- **Frontend Analysis**: See [FRONTEND_ANALYSIS_REPORT.md](FRONTEND_ANALYSIS_REPORT.md)
+- **Migration Guide**: See [MIGRATION_NOTES.md](MIGRATION_NOTES.md)
+- **Issues**: [GitHub Issues](https://github.com/adarshalexbalmuchu/FX/issues)
 
 ---
 
@@ -463,10 +424,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [ ] User authentication
 - [ ] Database persistence
 - [ ] WebSocket updates
-- [ ] Mobile app
 
 ---
 
-**Built with ❤️ for financial risk management**
+Built with ❤️ for financial risk management
 
-**🌊 VolatiSense** - *Simulate. Optimize. Succeed.*
+🌊 **VolatiSense** - *Simulate. Optimize. Succeed.*
